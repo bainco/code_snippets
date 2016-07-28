@@ -1,0 +1,1 @@
+find . -name '*.mp4' -or -name '*.m4v' | while read f; do basename  | xargs -0 -I {} ffmpeg -i  -map_metadata 0 -id3v2_version 3 -vn -b:a 192K ~/Desktop/tv-audio/{}.mp3;done
